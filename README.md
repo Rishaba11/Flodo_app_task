@@ -183,6 +183,7 @@ This project was developed with AI assistance (Claude). Below is a transparent a
 ## 📹 Demo Video
 
 link will be here soon
+https://drive.google.com/file/d/1Sh5Uc_c8mLShWYsZ0lgekfL0p0BDR7Ds/view?usp=sharing
 
 ---
 
