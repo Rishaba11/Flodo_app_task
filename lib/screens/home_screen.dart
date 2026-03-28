@@ -8,7 +8,6 @@ import '../widgets/task_card.dart';
 import '../widgets/stats_overview.dart';
 import '../widgets/empty_state.dart';
 import 'task_form_screen.dart';
-import 'task_detail_sheet.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -80,7 +79,32 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: _buildFAB(context, provider),
     );
   }
-
+void showTaskDetail(BuildContext context, Task task) {
+  showDialog(
+    context: context,
+    builder: (_) => AlertDialog(
+      title: Text(task.title),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 8),
+          Text("Description: ${task.description}"),
+          const SizedBox(height: 8),
+          Text("Due: ${task.dueDate.toString()}"),
+          const SizedBox(height: 8),
+          Text("Status: ${task.status}"),
+        ],
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text("Close"),
+        ),
+      ],
+    ),
+  );
+}
   Widget _buildAppBar(BuildContext context, TaskProvider provider) {
     return SliverAppBar(
       pinned: true,

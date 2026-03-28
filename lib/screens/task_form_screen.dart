@@ -223,7 +223,7 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
             ),
             if (isSaving) _buildSavingOverlay(),
           ],
-        ),
+        ),)
     );
   }
 
@@ -237,8 +237,8 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
         border: Border.all(
             color: AppTheme.inProgressColor.withOpacity(0.3)),
       ),
-      child: Row(
-        children: const [
+      child: const Row(
+        children: [
           Icon(Icons.edit_note_rounded,
               size: 16, color: AppTheme.inProgressColor),
           SizedBox(width: 8),
@@ -429,9 +429,9 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
           ),
         ),
         child: provider.isSaving
-            ? Row(
+            ? const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   SizedBox(
                     width: 18,
                     height: 18,
@@ -529,8 +529,7 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
             primary: AppTheme.primaryColor,
             surface: AppTheme.surfaceColor,
             onSurface: AppTheme.textPrimary,
-          ),
-          dialogBackgroundColor: AppTheme.surfaceColor,
+          ), dialogTheme: DialogThemeData(backgroundColor: AppTheme.surfaceColor),
         ),
         child: child!,
       ),
